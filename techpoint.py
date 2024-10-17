@@ -8,10 +8,6 @@ import numpy as np
 csv_file_path = '2025-VeloCityX-Expanded-Fan-Engagement-Data'
 df = pd.read_csv(csv_file_path)
 
-df = df.drop(columns=['Real-Time Chat Activity (Messages Sent)'])
-
-df.columns = df.columns.str.replace(' ', '_')
-
 correlation, _ = pearsonr(df['Time_on_Live_360_(mins)'], df['Virtual_Merchandise_Purchases'])
 print(f'Correlation between Time on Live and Virtual Merchandise Purchases: {correlation:.2f}')
 
